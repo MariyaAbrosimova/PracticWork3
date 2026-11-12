@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доска со стикерами — Drag & Drop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="controls">
+        <input type="text" id="stickerInput" placeholder="Текст стикера...">
+        <button id="addBtn">Добавить</button>
+    </div>
+
+    <div class="workspace">
+        <!-- Левая колонка: поле со стикерами -->
+        <div class="panel sidebar">
+            <div class="panel-header">
+                <h3>Поле со стикерами</h3>
+                <button class="clear-btn" id="clearPoolBtn" title="Очистить поле со стикерами">Очистить</button>
+            </div>
+            <div id="stickerPool" class="sticker-pool"></div>
+        </div>
+
+        <!-- Правая область: борд -->
+        <div class="panel board-wrapper">
+            <div class="panel-header">
+                <h3>Борд</h3>
+                <button class="clear-btn" id="clearBoardBtn" title="Очистить борд">Очистить</button>
+            </div>
+            <div id="board" class="board"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    padding: 20px;
+    color: #333;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#stickerInput {
+    width: 300px;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+    #stickerInput:focus {
+        border-color: #4a6cf7;
+    }
+
+#addBtn {
+    padding: 10px 20px;
+    background-color: #4a6cf7;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+    #addBtn:hover {
+        background-color: #3858d6;
+    }
+
+.workspace {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 75vh;
+}
+
+.panel {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.sidebar {
+    width: 260px;
+    flex-shrink: 0;
+}
+
+.board-wrapper {
+    flex-grow: 1;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.clear-btn {
+    padding: 5px 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+    .clear-btn:hover {
+        background-color: #e03e3e;
+    }
+
+/* Поле со стикерами (складируются столбиком) */
+.sticker-pool {
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 4px;
+}
+
+/* Борд (свободное позиционирование) */
+.board {
+    position: relative;
+    flex-grow: 1;
+    background-color: #f9fafc;
+    background-image: radial-gradient(#d0d7de 1px, transparent 1px);
+    background-size: 20px 20px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Сам стикер */
+.sticker {
+    width: 160px;
+    min-height: 90px;
+    padding: 24px 12px 12px;
+    background-color: #fff59d;
+    border: 1px solid #e6d85c;
+    border-radius: 6px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.12);
+    cursor: grab;
+    position: relative;
+    word-wrap: break-word;
+    user-select: none;
+    font-size: 14px;
+}
+
+    .sticker:active {
+        cursor: grabbing;
+    }
+
+/* Стикер на борде становится абсолютно позиционированным */
+.board .sticker {
+    position: absolute;
+}
+
+/* Кнопка удаления конкретного стикера */
+.delete-sticker-btn {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    background: none;
+    border: none;
+    color: #777;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+    .delete-sticker-btn:hover {
+        color: #d93025;
+    }
